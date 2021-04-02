@@ -12,7 +12,7 @@ def main():
     db_session.global_init("db/blogs.db")
     # app.run()
 
-    # user = User()
+    # user = User()1
     # user.name = "Пользователь 1"
     # user.about = "биография пользователя 1"
     # user.email = "email@email.ru"
