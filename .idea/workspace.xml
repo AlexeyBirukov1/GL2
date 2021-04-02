@@ -26,10 +26,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9186b2e-46f1-4757-91a1-ee5c163bfcbf" name="Default Changelist" comment="добавлены изображения разных видов техники">
-      <change beforePath="$PROJECT_DIR$/.idea/GL22.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GL22.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="e9186b2e-46f1-4757-91a1-ee5c163bfcbf" name="Default Changelist" comment="Картинки">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -135,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617371282758</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Картинки">
+      <created>1617376822377</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1617376822377</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -166,6 +173,7 @@
     <MESSAGE value="CUM IT" />
     <MESSAGE value="CUM IT12" />
     <MESSAGE value="добавлены изображения разных видов техники" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавлены изображения разных видов техники" />
+    <MESSAGE value="Картинки" />
+    <option name="LAST_COMMIT_MESSAGE" value="Картинки" />
   </component>
 </project>
