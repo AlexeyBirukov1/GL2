@@ -12,8 +12,13 @@
         {{item.content}}
     </div>
     <div>
-        название товара
-        <img src="https://static.onlinetrade.ru/img/items/b/kholodilnik_liebherr_cbnes_6256_1418404_12.jpg">
+        <img src="{{item.contet}}">
+    </div>
+    <div>
+        <a href="" class="btn btn-warning">
+            Купить
+
+        </a>
     </div>
     {% if current_user.is_authenticated and current_user == item.user %}
     <div>

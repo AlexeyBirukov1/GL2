@@ -27,13 +27,10 @@ def load_user(user_id):
 @app.route("/")
 def index():
     db_sess = db_session.create_session()
-    if current_user.is_authenticated:
-        news = db_sess.query(News).filter(
-            (News.user == current_user) | (News.is_private != True))
-    else:
-        news = db_sess.query(News).filter(News.is_private != True)
+    news = db_sess.query(News)
     return render_template("index.html", news=news)
-a = 0
+
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
