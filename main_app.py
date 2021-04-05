@@ -33,7 +33,7 @@ def index():
     else:
         news = db_sess.query(News).filter(News.is_private != True)
     return render_template("index.html", news=news)
-
+a = 0
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
