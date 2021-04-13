@@ -126,47 +126,19 @@ def edit_news(id):
                            form=form
                            )
 
-@app.route('/news_delete/<int:id>', methods=['GET', 'POST'])
-@login_required
-def news_delete(id):
-    db_sess = db_session.create_session()
-    news = db_sess.query(News).filter(News.id == id,
-                                      News.user == current_user
-                                      ).first()
-    if news:
-        db_sess.delete(news)
-        db_sess.commit()
-    else:
-        abort(404)
-    return redirect('/')
-
-# @app.route("/cookie_test")
-# def cookie_test():
-#     visits_count = int(request.cookies.get("visits_count", 0))
-#     if visits_count:
-#         res = make_response(
-#             f"Вы пришли на эту страницу {visits_count + 1} раз")
-#         res.set_cookie("visits_count", str(visits_count + 1),
-#                        max_age=60 * 60 * 24 * 365 * 2)
+# @app.route('/news_delete/<int:id>', methods=['GET', 'POST'])
+# @login_required
+# def news_delete(id):
+#     db_sess = db_session.create_session()
+#     news = db_sess.query(News).filter(News.id == id,
+#                                       News.user == current_user
+#                                       ).first()
+#     if news:
+#         db_sess.delete(news)
+#         db_sess.commit()
 #     else:
-#         res = make_response(
-#             "Вы пришли на эту страницу в первый раз за последние 2 года")
-#         res.set_cookie("visits_count", '1',
-#                        max_age=60 * 60 * 24 * 365 * 2)
-#     return res
-#
-# @app.route("/session_test")
-# def session_test():
-#     visits_count = session.get('visits_count', 0)
-#     session['visits_count'] = visits_count + 1
-#     return make_response(
-#         f"Вы пришли на эту страницу {visits_count + 1} раз")
-
-
-
-
-
-
+#         abort(404)
+#     return redirect('/')
 
 
 def main():
