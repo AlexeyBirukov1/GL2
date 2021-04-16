@@ -26,16 +26,8 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9186b2e-46f1-4757-91a1-ee5c163bfcbf" name="Default Changelist" comment="изменение html, index.html">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/GL22.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GL22.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="e9186b2e-46f1-4757-91a1-ee5c163bfcbf" name="Default Changelist" comment="РАЗБОР БАЗЫ ДАННЫХ">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/news.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/news.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/users.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/blogs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617378775318</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="РАЗБОР БАЗЫ ДАННЫХ">
+      <created>1618312138301</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1618312138316</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -190,28 +189,33 @@
     <MESSAGE value="добавлены изображения разных видов техники" />
     <MESSAGE value="Картинки" />
     <MESSAGE value="изменение html, index.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="изменение html, index.html" />
+    <MESSAGE value="РАЗБОР БАЗЫ ДАННЫХ" />
+    <option name="LAST_COMMIT_MESSAGE" value="РАЗБОР БАЗЫ ДАННЫХ" />
   </component>
   <component name="WindowStateProjectService">
     <state x="529" y="222" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1618310018557">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="529" y="222" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1618310018557" />
-    <state width="1515" height="208" key="GridCell.Tab.0.bottom" timestamp="1618311981891">
+    <state width="1515" height="208" key="GridCell.Tab.0.bottom" timestamp="1618381880357">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1618311981891" />
-    <state width="1515" height="208" key="GridCell.Tab.0.center" timestamp="1618311981890">
+    <state width="1515" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1618381880357" />
+    <state width="1515" height="208" key="GridCell.Tab.0.center" timestamp="1618381880357">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1618311981890" />
-    <state width="1515" height="208" key="GridCell.Tab.0.left" timestamp="1618311981890">
+    <state width="1515" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1618381880357" />
+    <state width="1515" height="208" key="GridCell.Tab.0.left" timestamp="1618381880357">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1618311981890" />
-    <state width="1515" height="208" key="GridCell.Tab.0.right" timestamp="1618311981890">
+    <state width="1515" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1618381880357" />
+    <state width="1515" height="208" key="GridCell.Tab.0.right" timestamp="1618381880357">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1618311981890" />
+    <state width="1515" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1618381880357" />
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1618312212397">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1618312212397" />
   </component>
 </project>
