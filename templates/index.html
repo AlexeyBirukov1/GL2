@@ -20,23 +20,24 @@
 
     </div>
     <div>
-<!--        current_user.is_authenticated-->
-        <a href="" class="btn btn-warning">
-            Купить
+        {% if current_user.is_authenticated %}
+            <a href="" class="btn btn-warning">
+                Купить
 
-        </a>
-    </div>
-    {% if current_user.admin == 1 %}
-    <div>
+            </a>
+        {% endif %}
+
+        {% if current_user.admin == '1' %}
         <a href="/news/{{ item.id }}" class="btn btn-warning">
             Изменить
 
         </a>
-        <a href="/news_delete/{{ item.id }}" class="btn btn-danger">
+
+        <a href='/news_delete/<int:id>' class="btn btn-danger">
             Удалить
         </a>
-    </div>
-{% endif %}
+        {% endif %}
+        </div>
 </div>
 {% endfor %}
 {% endblock %}
