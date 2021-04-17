@@ -15,7 +15,7 @@ class User(SqlAlchemyBase, UserMixin):
                            primary_key=True, autoincrement=True)
     name = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     about = sqlalchemy.Column(sqlalchemy.String, nullable=True)
-    password_for_admin = sqlalchemy.Column(sqlalchemy.String, nullable=True)
+    # password_for_admin = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     email = sqlalchemy.Column(sqlalchemy.String,
                               index=True, unique=True, nullable=True)
     hashed_password = sqlalchemy.Column(sqlalchemy.String, nullable=True)
@@ -23,6 +23,7 @@ class User(SqlAlchemyBase, UserMixin):
                                      default=datetime.datetime.now)
 
     news = orm.relation("News", back_populates='user')
+    admin = sqlalchemy.Column(sqlalchemy.String, nullable=True)
 
     # вывод пользователя с заданными параметрами
     def __repr__(self):
