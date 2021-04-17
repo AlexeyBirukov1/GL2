@@ -122,7 +122,7 @@ def edit_news(id):
         else:
             abort(404)
     return render_template('news.html',
-                           title='Редактирование новости',
+                           title='Редактирование товара',
                            form=form
                            )
 

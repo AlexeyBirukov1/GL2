@@ -2,7 +2,7 @@
 
 {% block content %}
 <h1>Каталог товаров</h1>
-{% if current_user.is_authenticated %}
+{% if current_user.admin == '1' %}
     <a href="news" class="btn btn-secondary">Добавить товар</a>
 {% endif %}
 {% for item in news%}
@@ -20,12 +20,13 @@
 
     </div>
     <div>
+<!--        current_user.is_authenticated-->
         <a href="" class="btn btn-warning">
             Купить
 
         </a>
     </div>
-    {% if current_user.is_authenticated and current_user == item.user %}
+    {% if current_user.admin == 1 %}
     <div>
         <a href="/news/{{ item.id }}" class="btn btn-warning">
             Изменить
