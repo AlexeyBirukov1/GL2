@@ -76,7 +76,7 @@ def logout():
     logout_user()
     return redirect("/")
 
-@app.route('/news',  methods=['GET', 'POST'])
+@app.route('/items',  methods=['GET', 'POST'])
 @login_required
 def add_news():
     form = NewsForm()
@@ -86,16 +86,19 @@ def add_news():
         news.title = form.title.data
         news.content = form.content.data
         news.is_private = form.is_private.data
+        news.cost = form.cost.data
+        news.contet = form.contet.data
         current_user.news.append(news)
         db_sess.merge(current_user)
         db_sess.commit()
         return redirect('/')
-    return render_template('news.html', title='Добавление новости',
+    return render_template('news.html', title='Добавление товара',
                            form=form)
 
-@app.route('/news/<int:id>', methods=['GET', 'POST'])
+
+@app.route('/items/<int:id>', methods=['GET', 'POST'])
 @login_required
-def edit_news(id):
+def edit_items(id):
     form = NewsForm()
     if request.method == "GET":
         db_sess = db_session.create_session()
@@ -105,7 +108,8 @@ def edit_news(id):
         if news:
             form.title.data = news.title
             form.content.data = news.content
-            form.is_private.data = news.is_private
+            form.cost.data = news.cost
+            form.contet.data = news.contet
         else:
             abort(404)
     if form.validate_on_submit():
@@ -127,9 +131,9 @@ def edit_news(id):
                            )
 
 
-app.route('/news_delete/<int:id>', methods=['GET', 'POST'])
+@app.route('/delete/<int:id>', methods=['GET', 'POST'])
 @login_required
-def news_delete(id):
+def delete_items(id):
     db_sess = db_session.create_session()
     news = db_sess.query(News).filter(News.id == id,
                                       News.user == current_user
@@ -141,6 +145,40 @@ def news_delete(id):
         abort(404)
     return redirect('/')
 
+
+@app.route('/buy/<int:id>', methods=['GET', 'POST'])
+@login_required
+def buy_items(id):
+    form = NewsForm()
+    if request.method == "GET":
+        db_sess = db_session.create_session()
+        news = db_sess.query(News).filter(News.id == id,
+                                          News.user == current_user
+                                          ).first()
+        if news:
+            form.title.data = news.title
+            form.content.data = news.content
+            form.cost.data = news.cost
+            form.contet.data = news.contet
+        else:
+            abort(404)
+    if form.validate_on_submit():
+        db_sess = db_session.create_session()
+        news = db_sess.query(News).filter(News.id == id,
+                                          News.user == current_user
+                                          ).first()
+        if news:
+            news.title = form.title.data
+            news.content = form.content.data
+            news.is_private = form.is_private.data
+            db_sess.commit()
+            return redirect('/')
+        else:
+            abort(404)
+    return render_template('news.html',
+                           title='Редактирование товара',
+                           form=form
+                           )
 
 
 def main():
