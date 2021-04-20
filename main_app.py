@@ -1,3 +1,6 @@
+import sys
+
+import requests
 from flask import Flask, render_template, make_response, request, session
 from werkzeug.exceptions import abort
 from werkzeug.utils import redirect
@@ -183,6 +186,12 @@ def delete_item(id):
     del buy[id - 1]
     return redirect('/')
 
+@app.route('/map')
+def GetMap():
+    print('hi')
+    req = "http://static-maps.yandex.ru/1.x/?ll=87.129191,53.769267&spn=0.002,0.002&l=map&pt=87.129191,53.769267,pm2rdm"
+    # тут будет код создающий ссылку на картинку
+    return render_template('maps.html', map=req)
 
 def main():
     db_session.global_init("db/blogs.db")
