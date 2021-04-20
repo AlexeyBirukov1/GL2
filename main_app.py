@@ -146,39 +146,42 @@ def delete_items(id):
     return redirect('/')
 
 
+buy = []
+all_cost = 0
+
+
 @app.route('/buy/<int:id>', methods=['GET', 'POST'])
 @login_required
 def buy_items(id):
-    form = NewsForm()
-    if request.method == "GET":
-        db_sess = db_session.create_session()
-        news = db_sess.query(News).filter(News.id == id,
-                                          News.user == current_user
-                                          ).first()
-        if news:
-            form.title.data = news.title
-            form.content.data = news.content
-            form.cost.data = news.cost
-            form.contet.data = news.contet
-        else:
-            abort(404)
-    if form.validate_on_submit():
-        db_sess = db_session.create_session()
-        news = db_sess.query(News).filter(News.id == id,
-                                          News.user == current_user
-                                          ).first()
-        if news:
-            news.title = form.title.data
-            news.content = form.content.data
-            news.is_private = form.is_private.data
-            db_sess.commit()
-            return redirect('/')
-        else:
-            abort(404)
-    return render_template('news.html',
-                           title='Редактирование товара',
-                           form=form
-                           )
+    global all_cost
+    News.id = id
+    db_sess = db_session.create_session()
+    item = db_sess.query(News)[id - 1]
+    all_cost += int(item.cost)
+    buy.append(item)
+    return redirect('/')
+
+
+
+@app.route('/cart/', methods=['GET', 'POST'])
+@login_required
+def cart():
+    global all_cost
+    lenn = len(buy)
+    return render_template("items.html", news=buy, lenn=lenn, all_cost=all_cost)
+
+
+@app.route('/delete_item/<int:id>', methods=['GET', 'POST'])
+@login_required
+def delete_item(id):
+    global all_cost
+    News.id = id
+    db_sess = db_session.create_session()
+    item = db_sess.query(News)[id - 1]
+    all_cost -= int(item.cost)
+    print(id)
+    del buy[id - 1]
+    return redirect('/')
 
 
 def main():

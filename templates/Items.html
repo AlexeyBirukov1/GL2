@@ -1,38 +1,47 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Каталог товаров</h1>
-{% if current_user.admin == '1' %}
-    <a href="items" class="btn btn-secondary">Добавить товар</a>
-{% endif %}
+<h1>Корзина</h1>
+{% if lenn == 0%}
+<br>
+<br>
+<br>
+<br>
+<br>
+<center>
+    <h2>Товаров нет</h2>
+</center>
+    {% endif %}
+{% if lenn != 0%}
 {% for item in news%}
 <div class="col-md6 border rounded">
+    <table>
+        <tr><td width="200">
+    <div>
+        <img src="{{item.contet}}" width="45%">
+    </div></td><td>
     <h2>{{item.title}}</h2>
     <div>
         {{item.content}}
 
     </div>
-    <div>
-        <img src="{{item.contet}}" width="30%">
-    </div>
         <div>
-            <strong>{{item.cost}}</strong>
+            <strong>{{item.cost}} рублей</strong>
         </div>
     <div>
-
-
-        {% if current_user.admin == '1' %}
-        <a href="/items/{{ item.id }}" class="btn btn-warning">
-            Изменить
+        <a href="" class="btn btn-warning">
+            Купить
 
         </a>
-
-        <a href="/delete/{{ item.id }}" class="btn btn-danger">
+        <a href="/delete_item/{{ item.id }}" class="btn btn-danger">
             Удалить
 
         </a>
-        {% endif %}
         </div>
+        </td></tr></table>
 </div>
 {% endfor %}
+    <h4>Итого:</h4>
+    <h6>{{all_cost}} рублей</h6>
+{% endif %}
 {% endblock %}
