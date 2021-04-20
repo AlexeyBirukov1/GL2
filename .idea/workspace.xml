@@ -19,24 +19,20 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/master" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:Lexa" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9186b2e-46f1-4757-91a1-ee5c163bfcbf" name="Default Changelist" comment="Добавление админа">
-      <change afterPath="$PROJECT_DIR$/templates/Items.html" afterDir="false" />
+    <list default="true" id="e9186b2e-46f1-4757-91a1-ee5c163bfcbf" name="Default Changelist" comment="комит">
+      <change afterPath="$PROJECT_DIR$/data/MAP_API.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/maps.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/GL22.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GL22.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/blogs.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/blogs.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/news.py" beforeDir="false" afterPath="$PROJECT_DIR$/forms/news.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,13 +43,14 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="115e611ed8423223d8e04ec681a9a89f4622e2cc" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -70,6 +67,27 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
   </component>
   <component name="RunManager" selected="Python.main_app">
+    <configuration name="MAP_API" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="GL22" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/MAP_API.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GL22" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -98,9 +116,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Projectall\venv\pyside\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main_app.py" />
@@ -112,11 +130,38 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="ok" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="GL22" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/ok.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.main_app" />
+      <item itemvalue="Python.MAP_API" />
+      <item itemvalue="Python.ok" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main_app" />
-        <item itemvalue="Python.main" />
-        <item itemvalue="Python.main_app" />
+        <item itemvalue="Python.ok" />
+        <item itemvalue="Python.MAP_API" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.main_app" />
       </list>
@@ -215,7 +260,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/master" />
+                        <option value="Lexa" />
                       </list>
                     </value>
                   </entry>
@@ -240,5 +285,39 @@
     <MESSAGE value="РАЗБОР БАЗЫ ДАННЫХ, добавление базы данных 2=3" />
     <MESSAGE value="Добавление админа" />
     <option name="LAST_COMMIT_MESSAGE" value="Добавление админа" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="222" y="66" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1618903022522">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="222" y="66" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1618903022522" />
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1618902866150">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1618902866150" />
+    <state width="1513" height="240" key="GridCell.Tab.0.bottom" timestamp="1618910921841">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1513" height="240" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1618910921841" />
+    <state width="1513" height="240" key="GridCell.Tab.0.center" timestamp="1618910921841">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1513" height="240" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1618910921841" />
+    <state width="1513" height="240" key="GridCell.Tab.0.left" timestamp="1618910921841">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1513" height="240" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1618910921841" />
+    <state width="1513" height="240" key="GridCell.Tab.0.right" timestamp="1618910921841">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1513" height="240" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1618910921841" />
+    <state x="406" y="172" key="MultipleFileMergeDialog" timestamp="1618903449262">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="406" y="172" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1618903449262" />
+    <state x="360" y="144" key="Vcs.Push.Dialog.v2" timestamp="1618902889794">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="360" y="144" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1618902889794" />
   </component>
 </project>
