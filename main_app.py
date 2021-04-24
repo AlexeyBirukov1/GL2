@@ -149,19 +149,18 @@ def delete_items(id):
     return redirect('/')
 
 
-buy = []
 all_cost = 0
 
 
-@app.route('/buy/<int:id>', methods=['GET', 'POST'])
+@app.route('/buy/<id>', methods=['GET', 'POST'])
 @login_required
 def buy_items(id):
     global all_cost
     News.id = id
-    db_sess = db_session.create_session()
-    item = db_sess.query(News)[id - 1]
-    all_cost += int(item.cost)
-    buy.append(item)
+    all_cost += int(db_session.create_session().query(News)[id - 1].cost)
+    id_items = current_user.item.split(", ")
+    id_items.append(id)
+    current_user.item = ", ".join(id_items)
     return redirect('/')
 
 
@@ -170,8 +169,13 @@ def buy_items(id):
 @login_required
 def cart():
     global all_cost
-    lenn = len(buy)
-    return render_template("items.html", news=buy, lenn=lenn, all_cost=all_cost)
+    db_sess = db_session.create_session()
+    id_items = current_user.item.split(", ")
+    id_items = list(map(int, id_items))
+    news = []
+    for id_item in id_items:
+        news.append(db_sess.query(News).get(News.id == id_item))
+    return render_template("items.html", news=news, all_cost=all_cost)
 
 
 @app.route('/delete_item/<int:id>', methods=['GET', 'POST'])
@@ -182,13 +186,11 @@ def delete_item(id):
     db_sess = db_session.create_session()
     item = db_sess.query(News)[id - 1]
     all_cost -= int(item.cost)
-    print(id)
-    del buy[id - 1]
-    return redirect('/')
+    # del buy[id - 1]
+    return redirect('/cart')
 
 @app.route('/map')
 def GetMap():
-    print('hi')
     req = "http://static-maps.yandex.ru/1.x/?ll=87.129191,53.769267&spn=0.002,0.002&l=map&pt=87.129191,53.769267,pm2rdm"
     # тут будет код создающий ссылку на картинку
     return render_template('maps.html', map=req)
