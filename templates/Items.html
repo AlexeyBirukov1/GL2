@@ -2,17 +2,7 @@
 
 {% block content %}
 <h1>Корзина</h1>
-{% if lenn == 0%}
-<br>
-<br>
-<br>
-<br>
-<br>
-<center>
-    <h2>Товаров нет</h2>
-</center>
-    {% endif %}
-{% if lenn != 0%}
+{% if news%}
 {% for item in news%}
 <div class="col-md6 border rounded">
     <table>
@@ -43,5 +33,15 @@
 {% endfor %}
     <h4>Итого:</h4>
     <h6>{{all_cost}} рублей</h6>
+{% else %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<center>
+    <h2>Товаров нет</h2>
+</center>
 {% endif %}
+
 {% endblock %}

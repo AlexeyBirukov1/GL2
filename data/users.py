@@ -24,7 +24,7 @@ class User(SqlAlchemyBase, UserMixin):
 
     news = orm.relation("News", back_populates='user')
     admin = sqlalchemy.Column(sqlalchemy.String, nullable=True)
-
+    item = sqlalchemy.Column(sqlalchemy.String)
     # вывод пользователя с заданными параметрами
     def __repr__(self):
         return f'<User> {self.id} {self.name} {self.email}'
