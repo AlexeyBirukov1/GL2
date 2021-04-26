@@ -1,6 +1,6 @@
 import sys
 
-import requests
+
 from flask import Flask, render_template, make_response, request, session
 from werkzeug.exceptions import abort
 from werkzeug.utils import redirect
@@ -18,19 +18,22 @@ app = Flask(__name__)
 login_manager = LoginManager()
 login_manager.init_app(app)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
-# Загрузка пользователя из базы данных и создание новой сессии
+# app.config['PERMANENT_SESSION_LIFETIME'] = datetime.timedelta(
+#     days=365
+# )
+# session.pop('visits_count', None)
 @login_manager.user_loader
 def load_user(user_id):
     db_sess = db_session.create_session()
     return db_sess.query(User).get(user_id)
-# Основная страница сайта
+
 @app.route("/")
 def index():
     db_sess = db_session.create_session()
     news = db_sess.query(News)
     return render_template("index.html", news=news)
 
-#Страница входа в аккаунт
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
@@ -69,13 +72,13 @@ def reqister():
         db_sess.commit()
         return redirect('/login')
     return render_template('register.html', title='Регистрация', form=form)
-# Выход из аккаунта. Возвращает на основную страницу
+
 @app.route('/logout')
 @login_required
 def logout():
     logout_user()
     return redirect("/")
-# Создание нового товара
+
 @app.route('/items',  methods=['GET', 'POST'])
 @login_required
 def add_news():
@@ -95,7 +98,7 @@ def add_news():
     return render_template('news.html', title='Добавление товара',
                            form=form)
 
-#Редактирование уже существующих товаров
+
 @app.route('/items/<int:id>', methods=['GET', 'POST'])
 @login_required
 def edit_items(id):
@@ -130,7 +133,7 @@ def edit_items(id):
                            form=form
                            )
 
-# Удаление существующих товаров
+
 @app.route('/delete/<int:id>', methods=['GET', 'POST'])
 @login_required
 def delete_items(id):
@@ -146,35 +149,37 @@ def delete_items(id):
     return redirect('/')
 
 
+buy = []
 all_cost = 0
 
-# Покупка товара. Добавляет товар в корзину, пересчитывает итоговую стоимость и обновляет страницу
-@app.route('/buy/<id>', methods=['GET', 'POST'])
+
+@app.route('/buy/<int:id>', methods=['GET', 'POST'])
 @login_required
 def buy_items(id):
     global all_cost
     News.id = id
-    all_cost += int(db_session.create_session().query(News)[id - 1].cost)
-    id_items = current_user.item.split(", ")
-    id_items.append(id)
-    current_user.item = ", ".join(id_items)
+    db_sess = db_session.create_session()
+    item = db_sess.query(News)[id - 1]
+    all_cost += int(item.cost)
+    buy.append(id)
     return redirect('/')
 
 
-# Корзина
+
 @app.route('/cart/', methods=['GET', 'POST'])
 @login_required
 def cart():
     global all_cost
-    db_sess = db_session.create_session()
-    id_items = current_user.item.split(", ")
-    id_items = list(map(int, id_items))
-    news = []
-    for id_item in id_items:
-        news.append(db_sess.query(News).get(News.id == id_item))
-    return render_template("items.html", news=news, all_cost=all_cost)
+    lenn = len(buy)
+    buyy = []
+    for id in buy:
+        News.id = id
+        db_sess = db_session.create_session()
+        item = db_sess.query(News)[id - 1]
+        buyy.append(item)
+    return render_template("items.html", news=buyy, lenn=lenn, all_cost=all_cost)
 
-# Удаление товаров из корзины
+
 @app.route('/delete_item/<int:id>', methods=['GET', 'POST'])
 @login_required
 def delete_item(id):
@@ -183,18 +188,19 @@ def delete_item(id):
     db_sess = db_session.create_session()
     item = db_sess.query(News)[id - 1]
     all_cost -= int(item.cost)
-    # del buy[id - 1]
-    return redirect('/cart')
-# Страница с картой магазинов
+    del buy[buy.index(id)]
+    return redirect('/cart/')
+
 @app.route('/map')
 def GetMap():
+    print('hi')
     req = "http://static-maps.yandex.ru/1.x/?ll=87.129191,53.769267&spn=0.002,0.002&l=map&pt=87.129191,53.769267,pm2rdm"
     # тут будет код создающий ссылку на картинку
     return render_template('maps.html', map=req)
-# Основная функция проекта
+
 def main():
     db_session.global_init("db/blogs.db")
     app.run()
-# Запуск проекта
+
 if __name__ == '__main__':
     main()
