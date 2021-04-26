@@ -151,6 +151,7 @@ def delete_items(id):
 
 
 buy = []
+a = 0
 all_cost = 0
 
 
