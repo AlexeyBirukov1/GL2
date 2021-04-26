@@ -1,1 +1,6 @@
-flask, sqlalchemy, werkzeug, flask_login, flask_wtf, datetime
+flask
+sqlalchemy
+werkzeug
+flask_login
+flask_wtf
+datetime
