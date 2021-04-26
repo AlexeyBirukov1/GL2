@@ -2,6 +2,10 @@
 
 {% block content %}
 <h1>Каталог товаров</h1>
+        <a href="/map" class="btn btn-danger">
+            карта магазинов
+
+        </a>
 {% if current_user.admin == '1' %}
     <a href="items" class="btn btn-secondary">Добавить товар</a>
 {% endif %}
