@@ -21,7 +21,7 @@ class News(SqlAlchemyBase):
     # на поле id таблицы users
     user_id = sqlalchemy.Column(sqlalchemy.Integer,
                                 sqlalchemy.ForeignKey("users.id"))
-    # user — атрибут, который позволит получить для новости
+    # user — атрибут, который позволит получить для товара
     # полноценный объект класса User
     user = orm.relation('User')
 
