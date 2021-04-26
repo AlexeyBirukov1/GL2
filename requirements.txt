@@ -1,0 +1,1 @@
+flask, sqlalchemy, werkzeug, flask_login, flask_wtf, datetime
